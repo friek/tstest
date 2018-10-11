@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 @click="clicked">{{ msg }}</h1>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -36,6 +36,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+
+  public clicked(): void {
+    alert("Clicked");
+  }
 }
 </script>
 
